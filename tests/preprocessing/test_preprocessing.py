@@ -5,6 +5,7 @@ from insurance_price_prediction.preprocessing.text_preprocessing import (
 )
 import nltk
 nltk.download('punkt')
+nltk.download('stopwords')
 
 @pytest.mark.parametrize("input_text, keep_numbers, expected_output", [
     ("Hello World!!", False, "hello world"),
