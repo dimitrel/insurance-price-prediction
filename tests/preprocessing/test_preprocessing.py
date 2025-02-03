@@ -3,6 +3,8 @@ from insurance_price_prediction.preprocessing.text_preprocessing import (
     clean_text,
     preprocess_text_with_nltk,
 )
+import nltk
+nltk.download('punkt')
 
 @pytest.mark.parametrize("input_text, keep_numbers, expected_output", [
     ("Hello World!!", False, "hello world"),
