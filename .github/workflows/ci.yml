@@ -1,0 +1,35 @@
+name: Python CI
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9.19'
+
+      - name: Install Poetry
+        run: |
+          curl -sSL https://install.python-poetry.org | python3 -
+
+      - name: Load Poetry from Updated PATH
+        run: export PATH="$HOME/.local/bin:$PATH"
+
+      - name: Install dependencies with Poetry
+        run: poetry install
+
+      - name: Run tests
+        run: poetry run pytest --disable-warnings
