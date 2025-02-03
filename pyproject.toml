@@ -1,0 +1,23 @@
+[tool.poetry]
+name = "insurance_price_prediction"
+version = "0.1.0"
+description = "Insurance Price Prediction - Template Project"
+authors = ["dimitris.dimitrelos"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.9"
+nltk = "3.8.1"
+numpy = "1.23.5"
+pandas = "1.5.3"
+scikit-learn = "1.0.2"
+wget = "3.2"
+fastapi = "^0.115.6"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.3.4"
+jupyter = "^1.1.1"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
